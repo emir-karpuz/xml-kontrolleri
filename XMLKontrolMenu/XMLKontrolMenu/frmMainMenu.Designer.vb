@@ -33,6 +33,7 @@ Partial Class frmMainMenu
         Me.txtXML.ReadOnly = True
         Me.txtXML.Size = New System.Drawing.Size(426, 463)
         Me.txtXML.TabIndex = 0
+        Me.txtXML.TabStop = False
         '
         'frmMainMenu
         '

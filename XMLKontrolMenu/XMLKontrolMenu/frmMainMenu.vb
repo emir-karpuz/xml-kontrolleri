@@ -5,8 +5,9 @@ Public Class frmMainMenu
 
     Public Sub readXML()
         While xmlText.Read()
-            If xmlText.IsStartElement() Then
-                Select Case xmlText.Name.ToString
+
+            If xmlText.NodeType = XmlNodeType.Element Then 'NodeType ile ilgili nodun tipi döner(Text, Boşluk, Doc vs.)
+                Select Case xmlText.Name
                     Case "to"
                         txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
                     Case "from"
@@ -17,10 +18,24 @@ Public Class frmMainMenu
                         txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
                 End Select
             End If
+
+        End While
+    End Sub
+
+
+    Public Sub readXMLWithTag()
+
+        Dim childNode As XmlNode
+
+        While xmlText.Read()
+
+            txtXML.Text = childNode.Attributes("to").InnerXml
+
         End While
     End Sub
 
     Private Sub frmMainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        readXML()
+
+        readXMLWithTag()
     End Sub
 End Class
