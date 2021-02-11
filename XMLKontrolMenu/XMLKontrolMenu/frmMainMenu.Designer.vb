@@ -23,6 +23,7 @@ Partial Class frmMainMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtXML = New System.Windows.Forms.TextBox()
+        Me.btnXMLOlustur = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtXML
@@ -31,9 +32,18 @@ Partial Class frmMainMenu
         Me.txtXML.Multiline = True
         Me.txtXML.Name = "txtXML"
         Me.txtXML.ReadOnly = True
-        Me.txtXML.Size = New System.Drawing.Size(426, 463)
+        Me.txtXML.Size = New System.Drawing.Size(426, 367)
         Me.txtXML.TabIndex = 0
         Me.txtXML.TabStop = False
+        '
+        'btnXMLOlustur
+        '
+        Me.btnXMLOlustur.Location = New System.Drawing.Point(12, 385)
+        Me.btnXMLOlustur.Name = "btnXMLOlustur"
+        Me.btnXMLOlustur.Size = New System.Drawing.Size(117, 90)
+        Me.btnXMLOlustur.TabIndex = 1
+        Me.btnXMLOlustur.Text = "XML Oluştur"
+        Me.btnXMLOlustur.UseVisualStyleBackColor = True
         '
         'frmMainMenu
         '
@@ -41,6 +51,7 @@ Partial Class frmMainMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(450, 487)
+        Me.Controls.Add(Me.btnXMLOlustur)
         Me.Controls.Add(Me.txtXML)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmMainMenu"
@@ -51,4 +62,5 @@ Partial Class frmMainMenu
     End Sub
 
     Friend WithEvents txtXML As TextBox
+    Friend WithEvents btnXMLOlustur As Button
 End Class

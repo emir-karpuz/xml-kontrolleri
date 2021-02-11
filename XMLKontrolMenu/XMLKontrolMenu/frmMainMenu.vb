@@ -1,41 +1,10 @@
-﻿Imports System.Xml
-
-Public Class frmMainMenu
-    Dim xmlText As XmlReader = XmlReader.Create(Application.StartupPath & "\test.xml")
-
-    Public Sub readXML()
-        While xmlText.Read()
-
-            If xmlText.NodeType = XmlNodeType.Element Then 'NodeType ile ilgili nodun tipi döner(Text, Boşluk, Doc vs.)
-                Select Case xmlText.Name
-                    Case "to"
-                        txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
-                    Case "from"
-                        txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
-                    Case "heading"
-                        txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
-                    Case "body"
-                        txtXML.Text += xmlText.ReadElementContentAsString & Environment.NewLine
-                End Select
-            End If
-
-        End While
-    End Sub
-
-
-    Public Sub readXMLWithTag()
-
-        Dim childNode As XmlNode
-
-        While xmlText.Read()
-
-            txtXML.Text = childNode.Attributes("to").InnerXml
-
-        End While
-    End Sub
+﻿Public Class frmMainMenu
 
     Private Sub frmMainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        readXML.readXML()
+    End Sub
 
-        readXMLWithTag()
+    Private Sub btnXMLOlustur_Click(sender As Object, e As EventArgs) Handles btnXMLOlustur.Click
+        writeXML.writeXML()
     End Sub
 End Class
